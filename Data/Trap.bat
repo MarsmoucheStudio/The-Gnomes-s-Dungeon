@@ -9,6 +9,7 @@ set /p race=<Char\Race.txt
 set /p class=<Char\Class.txt
 
 :MainMenu
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%     
@@ -27,6 +28,7 @@ if errorlevel 2  goto :Search
 if errorlevel 1 goto :Chest
 
 :Chest
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%     
@@ -44,6 +46,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1  goto :MainMenu
 
 :Search
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%     

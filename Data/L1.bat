@@ -1,5 +1,5 @@
 @echo off
-set /p v=<Levels/Cmakelist.txt
+set /p v=<Cmakelist.txt
 
 title The Dungeon %TheDungeon% by Dinde451
 
@@ -9,6 +9,7 @@ set /p race=<Char\Race.txt
 set /p class=<Char\Class.txt
 
 :MainMenu
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -27,6 +28,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :1
 
 :1
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -49,6 +51,7 @@ if errorlevel 2 goto :1_walk
 if errorlevel 1 goto :1_jump 
 
 :1_jump
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -68,6 +71,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :2
 
 :1_walk
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -85,6 +89,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :MainMenu
 
 :1_back
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -104,6 +109,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :MainMenu
 
 :2
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -125,6 +131,7 @@ if errorlevel 2 goto :2_feet
 if errorlevel 1 goto :2_walk
 
 :2_feet
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -142,6 +149,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :3
 
 :2_walk
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -158,24 +166,30 @@ echo.===========================================================================
 choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :MainMenu
 
+
+            _____________________________
+
 :3
+start /min Data\SFX\Choice.bat
+start /min Data\SFX\Zombie.bat
 cls
-echo.===============================================================================
-echo.                       The Dungeon v%v%                       
-echo.===============================================================================
-echo.
-echo.   You open the door and imediatly fall at the ground. You just hear some little
-echo.   voice saying : Mmmm... Maybe we should eat him...
-echo.   No... No... we will.... 
-echo.   You dont have the time to hear more, You become unconscious.
-echo.   
-echo.	[1]   Wait
-echo.
-echo.===============================================================================
+echo.===============================================================================              ___________________________________
+echo.                       The Dungeon v%v%                                                   /    O   .       O     .       O    \
+echo.===============================================================================            /    / \  .      / \    .      / \    \
+echo.                                                                                          /   ( o_0 ).    (O_O  )  .    ( 0_o )   \
+echo.   You open the door and imediatly fall at the ground. You just hear some little         /   /[ . . ]\   /[ . . ]\ .   /[ . . ]\   \
+echo.   voice saying : Mmmm... Maybe we should eat him...                                     \   U[_____]U   U[_____]U .   U[_____]U   /
+echo.   No... No... we will....                                                                \    U    U.     U    U  .     U    U   /
+echo.   You dont have the time to hear more, You become unconscious.                            \ ____________________________________/
+echo.                                                                                         
+echo.	[1]   Wait                                                                         
+echo.                                                                                        
+echo.===============================================================================              
 choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :3_Race
 
 :3_Race
+start /min Data\SFX\Choice.bat
 pushd %~dp0
 %Race%.bat
 popdg

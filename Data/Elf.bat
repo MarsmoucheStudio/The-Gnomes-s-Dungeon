@@ -1,5 +1,5 @@
 @echo off
-set /p v=<Levels/Cmakelist.txt
+set /p v=<Cmakelist.txt
 
 title The Dungeon %TheDungeon% by Dinde451
 
@@ -9,16 +9,17 @@ set /p race=<Char\Race.txt
 set /p class=<Char\Class.txt
 
 :MainMenu
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
 echo.===============================================================================
 echo.
-echo.   Gnome2.Mmmmm... A human.... It will taste good.... 
+echo.   Gnome2.Mmmmm... A Elf.... It will taste good.... 
 echo.   Gnome1.Shut up.... He may know the way out!
 echo.
 echo.   You wake up and see that you are in a dark little room. Just in front of you 
-echo.   are what seems to be Gnome. These Gnome watch you and start to walk toward You.
+echo.   are what seems to be Gnomes. These Gnome watch you and start to walk toward You.
 echo.   You try to run and hit one but you realise that you has been attached.
 echo.   One of the Gnome stop to walk right in front of you and say :
 echo.   We need to know one thing... Are you gonna be stupid and try to bullshit us ?
@@ -34,6 +35,7 @@ if errorlevel 2 goto :Dwarf
 if errorlevel 1 goto :Squirrel
 
 :SQUIRREL
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -50,6 +52,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :Dead
 
 :dwarf
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -73,6 +76,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :Escape
 
 :good
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -91,13 +95,14 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :Dead
 
 :escape
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
 echo.===============================================================================
 echo.
 echo.   Gnome1. YOU BROKE MY LAST ROPE!
-echo.   You little Human, I will Kill you !
+echo.   You little Elf, I will Kill you !
 echo.
 echo.	[1]   try to run
 echo.	[2]   try to take your sword
@@ -110,6 +115,7 @@ if errorlevel 2 goto :Sword
 if errorlevel 1 goto :Run
 
 :Rock
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -127,6 +133,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :End
 
 :Sword
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -142,6 +149,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :End
 
 :Sword
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -157,6 +165,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :End
 
 :Dead
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%                       
@@ -174,6 +183,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 10 goto :quit
 
 :End
+start /min Data\SFX\Choice.bat
 pushd %~dp0
 L2.bat
 popdg

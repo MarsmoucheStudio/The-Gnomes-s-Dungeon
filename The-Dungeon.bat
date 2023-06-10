@@ -10,52 +10,54 @@ set /p race=<Data\Char\Race.txt
 set /p class=<Data\Char\Class.txt
 
 :MainMenu
+start /min Data\SFX\Choice.bat
 cls
-echo.===============================================================================
-echo.                       The Dungeon v%v% 
-echo.                  %name% the %race% %class%                      
-echo.===============================================================================
-echo.        
-echo.
-echo.	[1]   Start              
-echo.        [2]   Character 
-echo.
-echo.	[0]   Quit
-echo.
-echo.   %name%, Don't forget... When you talk to a old Gnome Wizard you have to be
-echo.   carefull... There is alway a way to get out...
-echo.===============================================================================
-echo.        To stop the music you should run Close.bat in the game folder.
-echo.===============================================================================
+echo.===============================================================================    
+echo.                       The Dungeon v%v%                                          
+echo.                  %name% the %race% %class%                                    
+echo.===============================================================================  
+echo.                                                                                           *    *     O       *
+echo.                                                                                                    /   \   *
+echo.	[1]   Start                                                                            *   /     \
+echo.        [2]   Character                                                                           /_______\   
+echo.                                                                                                 [__________]
+echo.	[0]   Quit                                                                       *      (O)     (O)p    *
+echo.                                                                                                 [   U    ]
+echo.   Don't forget... When you talk to a old Gnome Wizard you have to be                 *           \______/
+echo.   carefull... There is alway a way to get out...                                          _____________         *
+echo.===============================================================================         * [ THE GNOMES  ]     
+echo.        To stop the music you should run Close.bat in the game folder.                    [    DUNGEON  ]     
+echo.===============================================================================           [_____________]
 choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 10 goto :Quit
 if errorlevel 2  goto :Char
 if errorlevel 1 goto :Start
 
 :Char
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%  
 echo.                    How to create a Character                
 echo.===============================================================================
 echo.
-echo.	First of all you need to open this the game folder, after Level and Char. In 
-echo.	this folder you will see 3 files : Name, Class and Race. You can 
-echo.	change the name to whatever you want but the race and class need to be one 
-echo.	from the list bellow.
-echo.   
-echo.   ==========
-echo.      Race
-echo.   ========== 
-echo.   -Human
-echo.   -Dwarf
-echo.   -Elf
-echo.   -Gnome
-echo.   
-echo.   ==========
-echo.     Class
-echo.   ==========
-echo.   -Wizard
+echo.	First of all you need to open this the game folder, after Level and Char. In     ___________________
+echo.	this folder you will see 3 files : Name, Class and Race. You can                []==================[]
+echo.	change the name to whatever you want but the race and class need to be one      []    ___________    ]
+echo.	from the list bellow.                                                          ( )   [  BEWARE   ]   ]
+echo.                                                                                        []    -----------    ]
+echo.   ==========                                                                           []                   ]
+echo.      Race                                                                              []                   ]
+echo.   ==========                                                                           []           [  O ]  ]
+echo.   -Human                                                                               []                   ]
+echo.   -Dwarf                                                                              ( )                   ]
+echo.   -Elf                                                                                 []==================[]
+echo.   -Gnome                                                                               []___________________]
+echo.                                                                                        /                    \
+echo.   ==========                                                                          /                      \
+echo.     Class                                                                            /                        \
+echo.   ==========                                                                        /                          \
+echo.   -Wizard                                                                          /                            \
 echo.   -Fighter
 echo.   -Cleric
 echo.
@@ -68,6 +70,7 @@ if errorlevel 10 goto :Quit
 if errorlevel 1 goto :MainMenu
 
 :Start
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%  
@@ -83,6 +86,8 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :one
 
 :one
+start /min Data\SFX\Choice.bat
+start /min Data\SFX\Zombie.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%  
@@ -100,6 +105,7 @@ if errorlevel 2 goto :two
 if errorlevel 1 goto :three
 
 :two
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%  
@@ -117,6 +123,7 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :MainMenu
 
 :three
+start /min Data\SFX\Choice.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%  
@@ -136,6 +143,8 @@ if errorlevel 2 goto :GnomeChest
 if errorlevel 1 goto :Gnome
 
 :Gnome
+start /min Data\SFX\Choice.bat
+start /min Data\SFX\Mage.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%  
@@ -162,6 +171,8 @@ if errorlevel 2 goto :Loadtrue
 if errorlevel 1 goto :Load
 
 :GnomeChest
+start /min Data\SFX\Choice.bat
+start /min Data\SFX\Mage.bat
 cls
 echo.===============================================================================
 echo.                       The Dungeon v%v%  
@@ -182,13 +193,11 @@ choice /C:1234567890 /N /M "Enter Your Choice : "
 if errorlevel 1 goto :MainMenu
 
 :Load
-pushd %~dp0
-Data\Trap.bat
-popd
+start /max Data\Trap.bat
+goto :quit
 
 :Loadtrue
-pushd %~dp0
-Data\L1.bat
-popd
+start /max Data\L1.bat
+goto :quit
 
 :Quit
