@@ -5,13 +5,14 @@ title The Dungeon %TheDungeon% by Dinde451
 start /Min Data\SFX\play.bat
 
 ::Change these to make your Character ;-)
-set /p name=<Data\Char\Name.txt
-set /p race=<Data\Char\Race.txt
-set /p class=<Data\Char\Class.txt
+set /p name=<Name.txt
+set /p race=<Race.txt
+set /p class=<Class.txt
 cls
 echo.
-echo.       _______________
-echo.       %name%
-echo.       _______________
+echo.     ===============================================================================
+echo.     %name% the %race% %class%
+echo.     ===============================================================================
 echo.
-echo.
+echo.     -Inventory
+echo.     1-
