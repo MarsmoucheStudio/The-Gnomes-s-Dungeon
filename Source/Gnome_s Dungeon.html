@@ -55,7 +55,7 @@ background-color: #EBEBEB;
 	color:#000;
 	text-align:left; 
 	box-shadow: #000 0.5em 0.5em 0;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Gnome&#39;s Dungeon" tags="" position="1100,100" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;,&quot;outline&quot;)[Gnome&#39;s Dungeon]
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Gnome&#39;s Dungeon" tags="" position="1100,100" size="100,100">&lt;center&gt;&lt;h2&gt;(text-style:&quot;bold&quot;,&quot;double-underline&quot;,&quot;outline&quot;)[Gnome&#39;s Dungeon]&lt;/h2&gt;&lt;/center&gt;
 
 
 
@@ -63,23 +63,32 @@ background-color: #EBEBEB;
 
 (button:) [[Character|Char]]
 
+&lt;center&gt;&lt;a href=&quot;Music.html&quot; target=&quot;_blank&quot;&gt;&lt;u&gt;&lt;b&gt;Launch Music&lt;/b&gt;&lt;/u&gt;&lt;/a&gt;&lt;/center&gt;
 
-(set: $inventory to (a:))</tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="1100,300" size="100,100">$name, You are standing before the door of a huge tower, just ahead of you.
+(set: $inventory to (a:))
 
-[[Open the Door|D1]]</tw-passagedata><tw-passagedata pid="3" name="Char" tags="" position="1300,100" size="100,100">(set: $name to 
-(prompt: &quot;What is your name?&quot;, &quot;Bob&quot;)
-)
+Join our Discord Comunity to talk with other player. The link is bellow. : - )
+**-** https://discord.gg/wwqe8aBW5e</tw-passagedata><tw-passagedata pid="2" name="1" tags="" position="1200,300" size="100,100">$name, You are standing alone in the forest, before the door of a huge tower, just ahead of you.
 
-(set: $race to 
-(prompt: &quot;What is your Race $name? Human, Elf, Dwarf or Gnome?&quot;, &quot;Human&quot;)
-)
+[[Open the Door|D1]]
+[[Go back in the forest|F1]]
 
-(set: $class to 
-(prompt: &quot;What is your Class %name? Fighter, Wizard or Cleric?&quot;, &quot;Fighter&quot;)
-)
+(set: $BVitality to $Vitality)
+(set: $BMagic to $Magic)
+(set: $BDamage to $Damage)</tw-passagedata><tw-passagedata pid="3" name="Char" tags="" position="1300,100" size="100,100">$name
+Vitality : $Vitality
+Magic : $Magic
+Dmg : $Damage
+Level : $level
 
 [[- &#39;&#39;Start&#39;&#39;-&gt;1]]
-</tw-passagedata><tw-passagedata pid="4" name="D1" tags="" position="300,300" size="100,100">$name, You have entered the main room. There are two doors, one in front of you and one at your right.
+[[Menu|Gnome&#39;s Dungeon]]
+
+[[New Character]]
+[[Load Character]]
+
+You should alway copy these values somewhere if you want to continue your game later.
+Each new game start In the forest outside the Gary-Bob&#39;s tower.</tw-passagedata><tw-passagedata pid="4" name="D1" tags="" position="300,300" size="100,100">$name, You have entered the main room. There are two doors, one in front of you and one at your right.
 
 [[Open the Door in front of you|D3]]
 
@@ -210,7 +219,7 @@ The door leads to a stair, which seems to go deeper in the dungeon.
 
 [[Dooe 2|dg6]]
 
-&lt;img src=&quot;dg4.png&quot;&gt;
+&lt;img src=&quot;Source\Img\dg4.png&quot;&gt;
 
 (set: $inventory to (a:))
 </tw-passagedata><tw-passagedata pid="27" name="dg4 cards" tags="" position="600,1300" size="100,100">You take the cards
@@ -225,9 +234,9 @@ The door leads to a stair, which seems to go deeper in the dungeon.
 
 [[Go back|dg4]]
 
-&lt;img src=&quot;dg5.png&quot;&gt;</tw-passagedata><tw-passagedata pid="29" name="dg6" tags="" position="500,1700" size="100,100">You open the door and enter what appears to be a large dining room. However this room is very old therefore the long wooden table is rotten and the walls are covered with mold.
+&lt;img src=&quot;Source\Img\dg5.png&quot;&gt;</tw-passagedata><tw-passagedata pid="29" name="dg6" tags="" position="500,1700" size="100,100">You open the door and enter what appears to be a large dining room. However this room is very old therefore the long wooden table is rotten and the walls are covered with mold.
 
-Sitting at the table is four old gnome who melt nothing but sigh.
+Sitting at the table is four old gnome who do nothing but sigh.
 Seeing you, the oldest and tallest gnome jumps out of his chair and runs towards you. He stops in front of you and stares at you with wide empty eyes before saying:
 I&#39;m looking for my deck of cards... haven&#39;t you seen it somewhere?
 
@@ -238,7 +247,7 @@ I&#39;m looking for my deck of cards... haven&#39;t you seen it somewhere?
 [[door 2|dg5]]
 [[door 3|dg7]]
 
-&lt;img src=&quot;dg6.png&quot;&gt;</tw-passagedata><tw-passagedata pid="30" name="dg5 help" tags="" position="600,1500" size="100,100">You nervously approach the man and ask him if he&#39;s okay. The man looks at you and jumps on you. no matter how hard you hit him with your sword, he resists your cuts, his skin is very hard. After a short struggle he breaks your neck. You are dead.
+&lt;img src=&quot;Source\Img\dg6.png&quot;&gt;</tw-passagedata><tw-passagedata pid="30" name="dg5 help" tags="" position="600,1500" size="100,100">You nervously approach the man and ask him if he&#39;s okay. The man looks at you and jumps on you. no matter how hard you hit him with your sword, he resists your cuts, his skin is very hard. After a short struggle he breaks your neck. You are dead.
 
 [[Start again|1]]</tw-passagedata><tw-passagedata pid="31" name="dg6 no cards" tags="" position="600,1700" size="100,100">(if: $inventory contains &quot;Cards&quot;) [
   Thanks man. 
@@ -255,23 +264,130 @@ I&#39;m looking for my deck of cards... haven&#39;t you seen it somewhere?
 [[door 2|dg5]]
 [[door 3|dg7]]
 
-&lt;img src=&quot;dg6.png&quot;&gt;</tw-passagedata><tw-passagedata pid="32" name="dg7" tags="" position="500,1900" size="100,100">You open the door and enter what appears to be a long hallway. The hallway splits in half about halfway through, but both sides of the hallway go in roughly the same direction until they reach a door.
+&lt;img src=&quot;Source\Img\dg6.png&quot;&gt;</tw-passagedata><tw-passagedata pid="32" name="dg7" tags="" position="500,1900" size="100,100">You open the door and enter what appears to be a long hallway. The hallway splits in half about halfway through, but both sides of the hallway go in roughly the same direction until they reach a door.
 
 [[door 1|dg6]]
 [[door 2|dg8right]]
 [[door 3|dg8left]]
 
-&lt;img src=&quot;dg6.png&quot;&gt;
+&lt;img src=&quot;Source\Img\dg6.png&quot;&gt;
 </tw-passagedata><tw-passagedata pid="33" name="dg8right" tags="" position="400,2100" size="100,100">You open the door and enter a large room, probably the largest you have ever explored. The room is divided in two by large iron bars too close for you to pass. In both sides of the room there is nothing but a large lever behind a goblin. Each of the two goblins wears black clothes and a hat in the shape of a triangle. 
 
 When he see you the goblin take a dagger and run toward you
 You have to fight.
 
-[[Fight]]</tw-passagedata><tw-passagedata pid="34" name="dg8left" tags="" position="600,2100" size="100,100">This area of the game is currently under devellopement
+[[Fight]]
+</tw-passagedata><tw-passagedata pid="34" name="dg8left" tags="" position="700,2100" size="100,100">This area of the game is currently under devellopement
 
-: - )</tw-passagedata><tw-passagedata pid="35" name="dg8right clear" tags="" position="500,2275" size="100,100"></tw-passagedata><tw-passagedata pid="36" name="Fight" tags="" position="275,2225" size="100,100">This area of the game is currently under devellopement
+: - )</tw-passagedata><tw-passagedata pid="35" name="dg8right clear" tags="" position="500,2100" size="100,100">This area is still in active devellopement...
+You finish the part of the Dungeon we made...    : - (
 
-: - )</tw-passagedata></tw-storydata>
+We will tell on our discord server when will be the update.    : - )
+
+Write this code in private conversation to Dinde451#6462 or @Chong-LI#9790 to get the @gnome role on discord.
+
+7512649853</tw-passagedata><tw-passagedata pid="36" name="Fight" tags="" position="100,2100" size="100,100">(set:$name to &quot;Bob&quot;,$race to &quot;Human&quot;,$class to &quot;Fighter&quot;,$Vitality to 7,$Magic to 2,$Damage to 5)
+
+(set: $dieRoll to (Random: 1, 3))
+(set: $Mhp to &quot;3&quot;)
+
+(if: $dieRoll is &quot;1&quot;) [goto: &quot;Miss&quot;]
+(if: $dieRoll is &quot;2&quot;) [(goto: &quot;Touch&quot;)]
+(if: $dieRoll is &quot;3&quot;) [(goto: &quot;Hit&quot;)]
+</tw-passagedata><tw-passagedata pid="37" name="Miss" tags="" position="0,2200" size="100,100">You both miss.
+
+[[Try to hit again|Fight]]</tw-passagedata><tw-passagedata pid="38" name="Touch" tags="" position="100,2200" size="100,100">[[Weapon]]
+(if: $Magic is not &quot;0&quot;) [[[Magic]]]
+</tw-passagedata><tw-passagedata pid="39" name="Hit" tags="" position="200,2200" size="100,100">The Goblin hit you.
+
+(set: $dieRoll to (Random: 1, 3))
+(set: $Vitality to $Vitality - $dieRoll)
+
+(if: $Vitality is &quot;0&quot;) [(go-to: &quot;Dead&quot;)]
+
+[[Hit again|Fight]]
+</tw-passagedata><tw-passagedata pid="40" name="Weapon" tags="" position="0,2400" size="100,100">You hit the Goblin
+
+(set: $dieRoll to (Random: 1, 6) + $Damage / 2)
+(set: $Mhp to %Mhp - %dieRoll
+
+(if: $Mhp is &quot;0&quot;) [(go-to: &quot;Kill&quot;)]
+
+[[Hit again|Fight]]</tw-passagedata><tw-passagedata pid="41" name="[Magic" tags="" position="200,2400" size="100,100">You hit the Goblin with a fire ball
+
+(set: $dieRoll to (Random: 1, 6) + $Magic)
+(set: $Mhp to %Mhp - %dieRoll
+
+(if: $Mhp is &quot;0&quot;) [(go-to: &quot;Kill&quot;)]
+
+[[Hit again|Fight]]</tw-passagedata><tw-passagedata pid="42" name="Kill" tags="" position="0,2500" size="100,100">You kill the Goblin.
+You win 10 xp.
+(set: $Xp to $Xp +10)
+
+[[Continue|dg8right clear]]</tw-passagedata><tw-passagedata pid="43" name="Dead" tags="" position="200,2500" size="100,100">The Goblin kill you.
+
+[[Start again|1]]</tw-passagedata><tw-passagedata pid="44" name="New Character" tags="" position="1400,100" size="100,100">(set: $name to 
+(prompt: &quot;What is your name?&quot;, &quot;Bob&quot;)
+)
+
+(set: $race to 
+(prompt: &quot;What is your Race $name? Human, Elf, Dwarf or Gnome?&quot;, &quot;Human&quot;)
+)
+
+(set: $class to 
+(prompt: &quot;What is your Class %name? Fighter, Wizard or Cleric?&quot;, &quot;Fighter&quot;)
+)
+
+(set: $Vitality to (Random: 1, 6))
+(set: $Magic to (Random: 1, 6))
+(set: $Damage to (Random: 1, 6))
+
+(if: $class is &quot;Fighter&quot;) [(set: $Vitality to $Vitality +3)]
+
+(if: $class is &quot;Wizard&quot;) [(set: $Magic ro $Magic +3)]
+
+(if: $class is &quot;Cleric&quot;) [(set: $Damage to $Damage +2)]
+
+[[- &#39;&#39;Start&#39;&#39;-&gt;1]]
+[[Menu|Gnome&#39;s Dungeon]]
+
+[[New Character]]
+[[Load Character]]</tw-passagedata><tw-passagedata pid="45" name="Load Character" tags="" position="1500,100" size="100,100">(set: $name to 
+(prompt: &quot;What is your name?&quot;, &quot;Bob&quot;)
+)
+(set: $race to 
+(prompt: &quot;What is your race?&quot;, &quot;Human&quot;)
+)
+(set: $class to 
+(prompt: &quot;What is your class?&quot;, &quot;Fighter&quot;)
+)
+(set: $Vitality to 
+(prompt: &quot;What is your Vitality?&quot;, &quot;6.02x10^23&quot;)
+)
+(set: $Magic to 
+(prompt: &quot;What is your Magic?&quot;, &quot;1&quot;)
+)
+(set: $Damage to 
+(prompt: &quot;What is your Damage?&quot;, &quot;1&quot;)
+)
+(set: $Level to 
+(prompt: &quot;What is your level?&quot;, &quot;0&quot;)
+)
+(set: $Xp to 
+(prompt: &quot;What is your amount of xp point?&quot;, &quot;0&quot;)
+)
+
+[[- &#39;&#39;Start&#39;&#39;-&gt;1]]
+[[Menu|Gnome&#39;s Dungeon]]
+
+[[New Character]]
+[[Load Character]]</tw-passagedata><tw-passagedata pid="46" name="F1" tags="" position="1800,300" size="100,100">Turn back and return to the path from which you came. Ahead of you is now a fork. on one side the path returns to your village and on the other the path perts in this swamp that you know as the cursed swamp.
+
+[[Village]]
+[[Swamp]]</tw-passagedata><tw-passagedata pid="47" name="Village" tags="" position="2400,300" size="100,100">&lt;img src=&quot;Source\Img\village.png&quot; width=&quot;s&quot; height=&quot;600&quot;&gt;
+
+The village is still in active devellopement. You should try to go in the tower.
+</tw-passagedata><tw-passagedata pid="48" name="Swamp" tags="" position="2100,400" size="100,100">The swamp is still in active devellopement. You should try to go in the tower.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

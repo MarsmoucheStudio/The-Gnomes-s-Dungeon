@@ -1,0 +1,586 @@
+:: StoryTitle
+Gnome's Dungeon
+
+
+:: StoryData
+{
+  "ifid": "AACFF418-1BB3-474A-973D-2C73304B7187",
+  "format": "Harlowe",
+  "format-version": "3.3.5",
+  "start": "Gnome's Dungeon",
+  "zoom": 1
+}
+
+
+:: 1 {"position":"1200,300","size":"100,100"}
+$name, You are standing alone in the forest, before the door of a huge tower, just ahead of you.
+
+[[Open the Door|D1]]
+[[Go back in the forest|F1]]
+
+(set: $BVitality to $Vitality)
+(set: $BMagic to $Magic)
+(set: $BDamage to $Damage)
+
+
+:: Char {"position":"1300,100","size":"100,100"}
+$name
+Vitality : $Vitality
+Magic : $Magic
+Dmg : $Damage
+Level : $level
+
+[[- ''Start''->1]]
+[[Menu|Gnome's Dungeon]]
+
+[[New Character]]
+[[Load Character]]
+
+You should alway copy these values somewhere if you want to continue your game later.
+Each new game start In the forest outside the Gary-Bob's tower.
+
+
+:: Chest Garry-Bob {"position":"600,500","size":"100,100"}
+$name, You don't even say a word to the gnome and walk straight to the door, but you stop in the middle of the room, as the old gnome start to scream :
+I KNOW YOUR NAME, $name the $race $class!
+You shall die for your recklessness, and your lack of respect!
+
+As the small gnome yells at you he throws a fireball. Even if you try to dodge it, you fall at the ground, dead and charred...
+
+[[Start again|1]]
+
+
+:: D1 {"position":"300,300","size":"100,100"}
+$name, You have entered the main room. There are two doors, one in front of you and one at your right.
+
+[[Open the Door in front of you|D3]]
+
+[[Open the Door at your right|D2]]
+
+
+:: D2 {"position":"200,500","size":"100,100"}
+$name, after opening the door, you realize that the small room in which you currently are is almost empty, except for the 14 zombies it contains. Even if you try to kill them with your sword, they outnumber you, and kill you with ease. You die between their teeths...
+
+[[Start Again|1]]
+
+
+:: D3 {"position":"400,500","size":"100,100"}
+$name, after opening the door you check left and right and see only 3 things
+in this room: a small and old gnome, a small chest and a door in front of you.
+
+[[Talk to the Gnome|Garry-Bob]]
+
+[[Open the chest|Chest Garry-Bob]]
+
+[[Open the door|Door Garry-Bob]]
+
+
+:: Dead {"position":"200,2500","size":"100,100"}
+The Goblin kill you.
+
+[[Start again|1]]
+
+
+:: Door Garry-Bob {"position":"700,500","size":"100,100"}
+$name, You don't even say a word to the gnome and walk straight to the door, but you stop in the middle of the room, as the old gnome start to scream :
+I KNOW YOUR NAME, $name the $race $class!
+You shall die for your recklessness, and your lack of respect!
+
+As the small gnome yells at you he throws a fireball. Even if you try to dodge it, you fall at the ground, dead and charred...
+
+[[Start again|1]]
+
+
+:: Dwarf {"position":"200,1300","size":"100,100"}
+-Gnome1. WE ARE NOT DWARFS !
+WE... ARE... G-N-O-M-E-S..  
+How many times do we need to say it !
+
+-Gnome2. Are you sure we are not dwarfs? 
+
+-Gnome1. What?! You're so dumb... You know what, you two are useless, I'm gonna find the way out by myself. 
+
+-Gnome3. What?! No... AAAAAAAAA
+
+[[Try to escape while they are fighting|escape]]
+
+
+:: F1 {"position":"1800,300","size":"100,100"}
+Turn back and return to the path from which you came. Ahead of you is now a fork. on one side the path returns to your village and on the other the path perts in this swamp that you know as the cursed swamp.
+
+[[Village]]
+[[Swamp]]
+
+
+:: Fight {"position":"100,2100","size":"100,100"}
+(set:$name to "Bob",$race to "Human",$class to "Fighter",$Vitality to 7,$Magic to 2,$Damage to 5)
+
+(set: $dieRoll to (Random: 1, 3))
+(set: $Mhp to "3")
+
+(if: $dieRoll is "1") [goto: "Miss"]
+(if: $dieRoll is "2") [(goto: "Touch")]
+(if: $dieRoll is "3") [(goto: "Hit")]
+
+
+
+:: Fuck {"position":"0,1300","size":"100,100"}
+<b>-Gnome1.</b> You little piece of sh...
+You know what? I was gonna let you live but I changed my mind... We are gonna
+eat you.
+   
+He walks up to you and sticks his knife in your kneecap. As you spasm on the
+floor uncontrollably, he stomps on your head multiple times. The evil gnome sticks his blade through your neck, then proceeds to gut you like a fish, with a savagery you never knew could reside in such a small being. He licks his blade, and laughs uncontrollably. You are dead. . .
+
+[[Start again|1]]
+
+
+:: Garry-Bob {"position":"500,500","size":"100,100"}
+Mmmmmm. I know you $name...
+It's not common to see a $race here...
+But it is useful to have a $class at my disposal.
+I'm Garry-Bob, The great wizard of the Dungeon. I'm a divinator and was aware of
+your imminent arrival.
+I have something to ask ya... Deep... Deep... Deep in my dungeon, I lost my
+magic crystal ball and I have to find it. If you can find it for me I will
+cast a spell on you which will make you immortal.
+
+You Accept! Ho... you're such a nice $name. But you need to be careful...
+For this dungeon is no random dungeon... It's a gnome's dungeon... full of traps
+and monsters. be careful, my friend... be careful.
+
+[[Enter the Dungeon|dg1]]
+[[  |dg1]]
+
+
+:: Gnome's Dungeon {"position":"1100,100","size":"100,100"}
+<center><h2>(text-style:"bold","double-underline","outline")[Gnome's Dungeon]</h2></center>
+
+
+
+(button:) [[Start the adventure|1]]
+
+(button:) [[Character|Char]]
+
+<center><a href="Music.html" target="_blank"><u><b>Launch Music</b></u></a></center>
+
+(set: $inventory to (a:))
+
+Join our Discord Comunity to talk with other player. The link is bellow. : - )
+**-** https://discord.gg/wwqe8aBW5e
+
+
+:: Hit {"position":"200,2200","size":"100,100"}
+The Goblin hit you.
+
+(set: $dieRoll to (Random: 1, 3))
+(set: $Vitality to $Vitality - $dieRoll)
+
+(if: $Vitality is "0") [(go-to: "Dead")]
+
+[[Hit again|Fight]]
+
+
+
+:: Kill {"position":"0,2500","size":"100,100"}
+You kill the Goblin.
+You win 10 xp.
+(set: $Xp to $Xp +10)
+
+[[Continue|dg8right clear]]
+
+
+:: Load Character {"position":"1500,100","size":"100,100"}
+(set: $name to 
+(prompt: "What is your name?", "Bob")
+)
+(set: $race to 
+(prompt: "What is your race?", "Human")
+)
+(set: $class to 
+(prompt: "What is your class?", "Fighter")
+)
+(set: $Vitality to 
+(prompt: "What is your Vitality?", "6.02x10^23")
+)
+(set: $Magic to 
+(prompt: "What is your Magic?", "1")
+)
+(set: $Damage to 
+(prompt: "What is your Damage?", "1")
+)
+(set: $Level to 
+(prompt: "What is your level?", "0")
+)
+(set: $Xp to 
+(prompt: "What is your amount of xp point?", "0")
+)
+
+[[- ''Start''->1]]
+[[Menu|Gnome's Dungeon]]
+
+[[New Character]]
+[[Load Character]]
+
+
+:: Miss {"position":"0,2200","size":"100,100"}
+You both miss.
+
+[[Try to hit again|Fight]]
+
+
+:: New Character {"position":"1400,100","size":"100,100"}
+(set: $name to 
+(prompt: "What is your name?", "Bob")
+)
+
+(set: $race to 
+(prompt: "What is your Race $name? Human, Elf, Dwarf or Gnome?", "Human")
+)
+
+(set: $class to 
+(prompt: "What is your Class %name? Fighter, Wizard or Cleric?", "Fighter")
+)
+
+(set: $Vitality to (Random: 1, 6))
+(set: $Magic to (Random: 1, 6))
+(set: $Damage to (Random: 1, 6))
+
+(if: $class is "Fighter") [(set: $Vitality to $Vitality +3)]
+
+(if: $class is "Wizard") [(set: $Magic ro $Magic +3)]
+
+(if: $class is "Cleric") [(set: $Damage to $Damage +2)]
+
+[[- ''Start''->1]]
+[[Menu|Gnome's Dungeon]]
+
+[[New Character]]
+[[Load Character]]
+
+
+:: Swamp {"position":"2100,400","size":"100,100"}
+The swamp is still in active devellopement. You should try to go in the tower.
+
+
+:: Touch {"position":"100,2200","size":"100,100"}
+[[Weapon]]
+(if: $Magic is not "0") [[[Magic]]]
+
+
+
+:: Village {"position":"2400,300","size":"100,100"}
+<img src="Source\Img\village.png" width="s" height="600">
+
+The village is still in active devellopement. You should try to go in the tower.
+
+
+
+:: Weapon {"position":"0,2400","size":"100,100"}
+You hit the Goblin
+
+(set: $dieRoll to (Random: 1, 6) + $Damage / 2)
+(set: $Mhp to %Mhp - %dieRoll
+
+(if: $Mhp is "0") [(go-to: "Kill")]
+
+[[Hit again|Fight]]
+
+
+:: \[Magic {"position":"200,2400","size":"100,100"}
+You hit the Goblin with a fire ball
+
+(set: $dieRoll to (Random: 1, 6) + $Magic)
+(set: $Mhp to %Mhp - %dieRoll
+
+(if: $Mhp is "0") [(go-to: "Kill")]
+
+[[Hit again|Fight]]
+
+
+:: dg1 {"position":"500,700","size":"100,100"}
+The door slowly opens, allowing you into a large, circular room. You scratch your
+head quizzically. In the center of the room, you can see a small island
+surrounded by a wide trench, on which stands a chest, locked with metal
+fastenings. The trench is wide and very deep. At the other side of the room is a door, that should allow you to leave this dangerous area. 
+Will you :
+
+[[Try to jump to the center of the room, where is the chest|dg1 jump]]
+[[Try to walk on the side of the room to reach the opposite door|dg1 walk]]
+[[Try to go back to the place you were before.|dg1 garry bob]]
+
+
+
+:: dg1 garry bob {"position":"800,700","size":"100,100"}
+You open the door and go back to the room of the gnome wizard. He looks at you and says: Mmmmm... $name, I was thinking a $class could do better...
+
+He points at you with his finger and throws a fireball at your head. You burn to your death, in the most painful way. . . 
+
+[[Start again|1]]
+
+
+:: dg1 jump {"position":"600,700","size":"100,100"}
+You jump and fail. At the very moment you jumped, you broke your toe and fell in the trench. After a moment you realize that you are still alive, although badly hurt. You look around and see that the trench was an extremely convincing painting and that there was, in fact, no real ditch. You hit the chest with a rock you find on the ground and break its lock. Inside  is a small key. You walk to the door and try to open it with the key and it works!
+It’s your lucky day ; - )
+
+[[Open the door|dg2]]
+
+
+:: dg1 walk {"position":"700,700","size":"100,100"}
+You try to walk and everything works fine until you reach the door. You try to open it but it is locked, so you try to slam it with a rock you see on the ground. But as you try to grab the rock, your head hits the door. You fall to the ground, Dead. 
+
+[[Start again|1]]
+
+
+:: dg2 {"position":"500,900","size":"100,100"}
+You open the door and see what seems to be a luxurious bedroom. This room is really gorgeous, and contains a big bed, some paintings, a small table and an  acacia chair. At your right there is a door.
+
+On the chair there is a Beautiful lady. She take a look at you and ask you
+to come give her a foot massage.
+
+[[Run to the door|dg2 run]]
+[[Give her a foot massage|dg2 feets]]
+
+
+:: dg2 feets {"position":"600,900","size":"100,100"}
+You say hi, and start to talk with her while giving her a foot massage. She tells you that she is the daughter of the great gnome wizard and she is happy to have a visitor. After talking a bit with you she gives you a key. You say goodbye, and use the key to open the door at your right. 
+
+[[Open the door|dg3]]
+
+
+:: dg2 run {"position":"700,900","size":"100,100"}
+You know it's a trap, it can't be real, so you run to the door. But you trip, fall on the ground and open your head, blood spilling everywhere. The beautiful young lady just has the time to say : What the f...
+before you die.
+
+[[Start again|1]]
+
+
+:: dg3 {"position":"500,1100","size":"100,100"}
+You open the door and immediately fall to the ground. You just hear some little irking voices saying : Mmmm... Maybe we should eat him... 
+No, no time for hesitations... We WILL eat him...
+You don't have the time to hear more, You fall unconscious.
+
+[[Continue|dg3gnome]]
+
+
+:: dg3gnome {"position":"100,1100","size":"100,100"}
+<b>-Gnome2.</b> Mmmmm... An Elf.... It will taste good....
+<b>-Gnome1.</b> Shut up.... He may know the way out!
+
+You wake up and see that you are in a small dark room. Just in front of you
+are what seems to be gnomes. These gnomes were watching you and seem to start 
+to walk towards you.
+You try to run towards them and hit one with a rock, but you realize that you 
+have been attached.
+One of the gnome stops his walk, stands right in front of you and say :
+We only need to know one thing... Are you gonna be stupid and try to bullshit us ?
+ 
+[[Say : Ho ItS A SqUiRrEl !|squirrel]]
+[[Say : For sure little Dwarf|Dwarf]]
+[[Say : F*** You|Fuck]]
+
+
+:: dg4 {"position":"500,1300","size":"100,100"}
+You open the door and find what appears to be a pleasant little living room. On the ground is a large green carpet on which is placed a small table of shiny wood. On the table is a deck of cards.
+
+[[Take the cards|dg4 cards]]
+
+[[Door 1|dg5]]
+
+[[Dooe 2|dg6]]
+
+<img src="Source\Img\dg4.png">
+
+(set: $inventory to (a:))
+
+
+
+:: dg4 cards {"position":"600,1300","size":"100,100"}
+You take the cards
+(set: $inventory to (a:))
+(set: $inventory to $inventory + (a: "Cards"))
+
+[[ok|dg4]]
+
+
+:: dg5 {"position":"500,1500","size":"100,100"}
+When you open the door you realize that the walls of the room you are in now are all covered in blood. In the center of the room is an old man dressed in noble clothes, on his head rests a crown and on his shoulders a golden cape. The man holds out his hand to you and mutters: ...Help...help!
+
+[[help him|dg5 help]]
+
+[[Door 1|dg6]]
+
+[[Go back|dg4]]
+
+<img src="Source\Img\dg5.png">
+
+
+:: dg5 help {"position":"600,1500","size":"100,100"}
+You nervously approach the man and ask him if he's okay. The man looks at you and jumps on you. no matter how hard you hit him with your sword, he resists your cuts, his skin is very hard. After a short struggle he breaks your neck. You are dead.
+
+[[Start again|1]]
+
+
+:: dg6 {"position":"500,1700","size":"100,100"}
+You open the door and enter what appears to be a large dining room. However this room is very old therefore the long wooden table is rotten and the walls are covered with mold.
+
+Sitting at the table is four old gnome who do nothing but sigh.
+Seeing you, the oldest and tallest gnome jumps out of his chair and runs towards you. He stops in front of you and stares at you with wide empty eyes before saying:
+I'm looking for my deck of cards... haven't you seen it somewhere?
+
+[[Says : Yup for sure, I have it|dg6 no cards]]
+[[Say : No, sorry bro|dg6 no cards]]
+
+[[door 1|dg4]]
+[[door 2|dg5]]
+[[door 3|dg7]]
+
+<img src="Source\Img\dg6.png">
+
+
+:: dg6 no cards {"position":"600,1700","size":"100,100"}
+(if: $inventory contains "Cards") [
+  Thanks man. 
+  after saying this the gnome run to the living room and drop it on the table before going back to the table.
+]
+
+(if: $inventory does not contain "Cards") [
+  You are not nice.
+  
+  after saying this the gnome walk back to the table.
+]
+
+[[door 1|dg4]]
+[[door 2|dg5]]
+[[door 3|dg7]]
+
+<img src="Source\Img\dg6.png">
+
+
+:: dg7 {"position":"500,1900","size":"100,100"}
+You open the door and enter what appears to be a long hallway. The hallway splits in half about halfway through, but both sides of the hallway go in roughly the same direction until they reach a door.
+
+[[door 1|dg6]]
+[[door 2|dg8right]]
+[[door 3|dg8left]]
+
+<img src="Source\Img\dg6.png">
+
+
+
+:: dg8left {"position":"700,2100","size":"100,100"}
+This area of the game is currently under devellopement
+
+: - )
+
+
+:: dg8right {"position":"400,2100","size":"100,100"}
+You open the door and enter a large room, probably the largest you have ever explored. The room is divided in two by large iron bars too close for you to pass. In both sides of the room there is nothing but a large lever behind a goblin. Each of the two goblins wears black clothes and a hat in the shape of a triangle. 
+
+When he see you the goblin take a dagger and run toward you
+You have to fight.
+
+[[Fight]]
+
+
+
+:: dg8right clear {"position":"500,2100","size":"100,100"}
+This area is still in active devellopement...
+You finish the part of the Dungeon we made...    : - (
+
+We will tell on our discord server when will be the update.    : - )
+
+Write this code in private conversation to Dinde451#6462 or @Chong-LI#9790 to get the @gnome role on discord.
+
+7512649853
+
+
+:: escape {"position":"0,1500","size":"100,100"}
+<b>-Gnome1.</b> YOU BROKE MY LAST ROPE!
+   You little $race, I will Kill you !
+   
+   [[Try to run away|run]]
+   [[Try to take your sword|sword]]
+   [[Try to throw a rock at him|rock]]
+
+
+:: rock {"position":"0,1700","size":"100,100"}
+The gnome doesn't even have enough time to say another word, as the rock knocks him out, and he falls to the ground. You run and stab him with his own knife, as fast as you can, feeling the delicious taste of revenge.
+You take a minute to catch your breath and open the door.
+The door leads to a stair, which seems to go deeper in the dungeon.
+
+[[Go deeper|dg4]]
+
+
+:: run {"position":"100,1700","size":"100,100"}
+You haven't even took a step, that you feel the cold touch of the knife. The gnome sliced leg, at your shin, which makes you fall to your knees. Now at a reasonable height for his finishing move, he plunges his sharp knife straight into your nose, thus damaging your brain. The tears covering your face mixes with the brain liquids that drip from the gaping hole in the center of your face. You die.
+
+[[Start again|1]]
+
+
+:: squirrel {"position":"100,1300","size":"100,100"}
+<b>-Gnome1.</b> He's a retard... lets kill him, he doesn't know shit.
+
+After saying this the gnome takes a knife and slices your Achilles tendon. As 
+you lose your stability, the three gnomes jump on your body, and climb to your 
+face and hands like small savage monkeys. With the use of their knives and their 
+sharp teeth, they rip your fingers away, and bite your face until you are 
+unrecognizable. They pierce your body from part to part, and rip your limbs off. You're dead. . .
+
+[[Start again|1]]
+
+
+:: sword {"position":"200,1700","size":"100,100"}
+You don't even have time to grab your sword, that you feel the cold touch of the knife. The gnome stabs you in the hand, and you take that opportunity to strike him in the face with your free fist. Unfortunately, he dodges the attack with ease, and slashes your carotid with his blade. You try to cover the wound, and stop the blood flow, but it's too late. Losing all your blood, as the gnome stabs you until your last breath, you die.
+
+[[Start again|1]]
+
+
+:: StoryStylesheet [stylesheet]
+tw-sidebar {
+    display: none;
+}
+
+ body {
+background-color: #EBEBEB;
+}
+
+#enemy {
+	width: 100%;
+	position: center;
+	padding: 1em;
+	border: solid #000 0.05em; 
+	border-radius: 0.1em;
+	background-color: #EBE;
+	font-size:1.5rem; 
+	color:#000;
+	text-align:left; 
+	box-shadow: #000 0.5em 0.5em 0;
+}
+
+#you {
+	width: 100%;
+	position: center;
+	padding: 1em;
+	border: solid #000 0.05em; 
+	border-radius: 0.1em;
+	background-color: #B0E0E6;
+	font-size:1.5rem; 
+	color:#000;
+	text-align:left; 
+	box-shadow: #000 0.5em 0.5em 0;
+}
+
+#log {
+	width: 100%;
+	position: center;
+	padding: 2em;
+	border: solid #000 0.05em; 
+	border-radius: 0.1em;
+	margin: auto;
+	background-color: #ffffff;
+	font-size:1.5rem; 
+	color:#000;
+	text-align:left; 
+	box-shadow: #000 0.5em 0.5em 0;
+}
